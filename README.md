@@ -1,5 +1,5 @@
 # webDependencyTree
-Implement a pluginthat can generate page dependency graph (DOM) 
+获取页面的依赖关系图的浏览器插件  Implement a pluginthat can generate page dependency graph (DOM) 
 
 The dependency graph of a page is a complex tree structure. This project provides a browser plug-in to obtain the dependency graph of the page, and returns the resource dependency in the form of a dictionary. Combined with the visualization module of the tree in the Python program, the page dependency graph can be generated.The main implementation logic and page display are in panel.js and panel.html files respectively
 
