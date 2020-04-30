@@ -1,0 +1,11 @@
+{
+  "name": "ProxyBench",
+  "version": "6",
+  "description": "Benchmark proxy.",
+  "devtools_page": "proxy.html",
+  "manifest_version": 2,
+  "web_accessible_resources":
+  [
+    "*"
+  ]
+}

@@ -1,0 +1,32 @@
+body {
+	font-family: 'Lucida Grande', sans-serif;
+}
+.resizable {
+	table-layout:fixed;/* 只有定义了表格的布局算法为fixed，下面td的定义才能起作用。 */
+	width:100%;
+	border-collapse: collapse;
+	margin:2px;
+}
+
+.resizable th {
+	text-align: left;
+	border: 1px solid #aaa;
+	font-weight: normal;
+	font-size: 11px;
+	vertical-align: middle;
+	padding: 1px;
+	color: rgb(48, 57, 66);
+}
+
+.resizable td{
+	border: 1px solid #eee;
+	color: rgb(48, 57, 66);
+	vertical-align: middle;
+	padding: 1px;
+	font-size: 11px;
+	width:100%;
+	word-break:keep-all;/* 不换行 */
+	white-space:nowrap;/* 不换行 */
+	overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+} 

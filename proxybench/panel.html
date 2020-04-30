@@ -1,0 +1,92 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="./assets/material.min.css">
+	<link rel="stylesheet" href="panel.css">
+
+	<script src="./assets/material.min.js"></script>
+  	<script src="libs/jquery.js"></script>
+	<script src="panel.js"></script>
+	<script type='text/javascript' src='libs/resizable-tables.js'></script>
+
+	<!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *;script-src * 'unsafe-inline'">-->
+	<!--<meta http-equiv="Content-Security-Policy"-->
+		  <!--content="connect-src *; default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;script-src * 'unsafe-inline';">-->
+	<!---->
+	<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+
+<style>
+	.pig{
+		height:30% ;
+	}
+</style>
+</head>
+<body>
+
+	 <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">网页依赖分析器</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens. -->
+
+        </div>
+      </header>
+
+      <main class="mdl-layout__content">
+        <div class="page-content">
+        		<div class="mdl-grid">
+                	<div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col" style="padding: 8px;">
+                	<button id="clearButton" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect">清除记录</button>
+                	<button id="reloadButton" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect">刷新页面</button>
+					 <table id="detailTable" class="resizable" width="100%" border="0" cellpadding="0" cellspacing="0">
+					    <thead>
+					    	<tr>
+						      <th style="width:60%;">URL</th>
+						      <th style="width:10%;">Size</th>
+					    	</tr>
+					    </thead>
+					    <tbody id="detailBody">
+
+					    </tbody>
+					</table>
+						<div>
+							</br>
+							<button id="sendb" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect">显示依赖图</button>
+							<div id="recv"></div>
+
+						</div>
+                	</div>
+
+          			<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
+          			<div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop" style="padding:3px;">
+						<center><h6>本插件将页面对象之间的依赖关系并可以生成依赖关系图</h6></center>
+
+          				<center>
+		                <button id="actionButton" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect">获取</button>
+							<button id="clearButton1" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect">清除</button>
+							<div class="mdl-tooltip mdl-tooltip--large" style="text-align:left;" for="actionButton">
+						请等待页面加载完毕或者页面长时间无新对象加载之后，再点击测试按钮开始测试。
+						</div>
+
+						<br>
+						<div class="mdl-textfield mdl-js-textfield" style="margin-top: 20px;">
+						<h6>日志</h6>
+		        			<textarea class="mdl-textfield__input" type="text" rows= "40" id="logarea" ></textarea>
+		      			</div>
+						</center>
+					</div>
+						<script src="socket.js">
+						</script>
+	     
+          			</div>	
+  				</div>
+
+        </div>
+      </main>
+    </div>
+</body>
+</html>
